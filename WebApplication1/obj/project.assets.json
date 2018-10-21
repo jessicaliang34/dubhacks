@@ -11501,23 +11501,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hosun\\.nuget\\packages\\": {},
+    "C:\\Users\\Jessica\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\hosun\\Documents\\GitHub\\dubhacks\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Jessica\\Documents\\dubhacks\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\hosun\\Documents\\GitHub\\dubhacks\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\hosun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hosun\\Documents\\GitHub\\dubhacks\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\Jessica\\Documents\\dubhacks\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Jessica\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jessica\\Documents\\dubhacks\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\hosun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jessica\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

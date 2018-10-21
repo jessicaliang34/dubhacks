@@ -8,7 +8,7 @@ namespace EFGetStarted.AspNetCore.NewDb.ClassesWeNeed
     public class UserPlans
     {
 		public string Id { get; set; }
-		public string planName { get; set; }
+		public string PlanName { get; set; }
 		public string allDates { get; set; }
 		public string startTime { get; set; }
 		public string endTime { get; set; }

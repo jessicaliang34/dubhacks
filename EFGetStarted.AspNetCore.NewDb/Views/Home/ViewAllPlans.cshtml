@@ -1,0 +1,99 @@
+﻿@*<!DOCTYPE html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				font-family: Calibri;
+				font-size: 20px;
+			}
+
+			div.list-group {
+				position: absolute;
+				border: 1px solid #aaa;
+				height: 60%;
+				width: 70%;
+				background: none;
+				overflow-y: scroll;
+			}
+
+			a.list-group-item {
+				background: rgba(214, 214, 194, 0.5);
+				border-color: #aaaaaa;
+				border-width: 2px;
+				color: black;
+				font-size: 15px;
+				font-family: Calibri;
+			}
+
+				a.list-group-item:hover {
+					background-color: rgba(183, 183, 183, 0.43);
+					color: black;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>My Plans</h2>
+			<div class="list-group">
+				<a class="list-group-item" ng-repeat="t in $storage.times track by $index">
+					<h3 class="list-group-item-heading"><strong>Name: Fright Night</strong></h3>
+					<p class="list-group-item-text"><strong>Date: October 31st, 2018</strong></p>
+					<p class="list-group-item-text"><strong>Food: Korean</strong></p>
+					<p class="list-group-item-text"><strong>Blah: Jessicow</strong></p>
+				</a>
+				<a class="list-group-item">
+					<h3 class="list-group-item-heading"><strong>Name: Seattle</strong></h3>
+					<p class="list-group-item-text"><strong>Date: July 27th, 2018</strong></p>
+					<p class="list-group-item-text"><strong>Food: Thai</strong></p>
+					<p class="list-group-item-text"><strong>Blah: Geraceu</strong></p>
+				</a>
+				<a class="list-group-item">
+					<h3 class="list-group-item-heading"><strong>Name: Dubhacks</strong></h3>
+					<p class="list-group-item-text"><strong>Date: October 21st, 2018</strong></p>
+					<p class="list-group-item-text"><strong>Food: Chinese</strong></p>
+					<p class="list-group-item-text"><strong>Blah: Kiwihead</strong></p>
+				</a>
+				<a class="list-group-item">
+					<h3 class="list-group-item-heading"><strong>Name: Special Surprise Expensive Dinner</strong></h3>
+					<p class="list-group-item-text"><strong>Date: May 19th, 2018</strong></p>
+					<p class="list-group-item-text"><strong>Food: Russian</strong></p>
+					<p class="list-group-item-text"><strong>Blah: Elvin</strong></p>
+				</a>
+			</div>
+		</div>
+	</body>
+	</html>*@
+
+@model ViewAllPlansModel
+
+@{
+	ViewData["Title"] = "All Plans";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+	<h4>View all current user plans.</h4>
+	<hr />
+	@foreach (var plan in Model.UserPlans)
+	{
+		<dl class="dl-horizontal">
+			<dt>
+				@plan.PlanName <br>
+				
+			<a href="/Home/UpdatePlan/@plan.PlanName"btn-bracketed">Update</a>
+			</dt>
+			<dd>
+				<b>Friends:</b> @plan.AllUsernames<br /> 
+				<b>Date</b> @plan.DateSet <br />
+				<b>Time</b> @plan.StartTime - @plan.EndTime <br/>
+				<b>City:</b> @plan.City <br />
+				<b>Price</b> @plan.Price<br />
+				
+			</dd>
+		</dl>
+	}
+</div>
+
+

@@ -7,11 +7,21 @@ namespace WebApplication1.Models
 {
 	public class RestuarantInformationModel
 	{
+		string UserName { get; set; }
+
+		string PlanName { get; set; }
+
+		DateTime AvailableDate { get; set; }
+
 		List<bool> Cuisines { get; set; }
 
-		int MaxPrice { get; set; }
+		DateTime StartTime { get; set; }
 
-		string CityLocation { get; set; }
+		DateTime EndTime { get; set; }
+
+		string Price { get; set; }
+
+		string CityName { get; set; }
 
     }
 }

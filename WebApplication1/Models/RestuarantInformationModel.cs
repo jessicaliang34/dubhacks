@@ -12,5 +12,6 @@ namespace WebApplication1.Models
 		int MaxPrice { get; set; }
 
 		string CityLocation { get; set; }
+
     }
 }

@@ -1,1 +1,9 @@
-.vs
+*.exe
+*.pdb
+*.manifest
+*.cache
+*.vs
+/bin
+/obj
+/config
+WebApplication1/bin/Debug/*

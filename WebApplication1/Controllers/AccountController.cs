@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
-    public class CuisineController
+    public class AccountController
     {
     }
 }

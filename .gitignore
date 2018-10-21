@@ -6,4 +6,4 @@
 /bin
 /obj
 /config
-WebApplication1/bin/Debug/
+WebApplication1/bin/Debug/*

@@ -24,15 +24,18 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
-
+        .search {
+            width: 10%;
+        }
         button {
             background-color: #4CAF50;
             color: white;
             padding: 14px 20px;
             margin: 8px 0;
             border: none;
+            border-radius: 15px;
             cursor: pointer;
-            width: 20%;
+            width: 15%;
         }
 
             button:hover {
@@ -72,15 +75,15 @@
     <form action="/action_page.php">
         <div class="container">
             <div>
-                <label for="uname"><b>Username: </b></label>
+                <label class="search" for="uname"><b>Username: </b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
+                <button type="submit">Login</button>
             </div>
             <div>
-                <label for="psw"><b>Password: </b></label>
+                <label class="search" for="psw"><b>Password: </b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit">Register</button>
             </div>
-            <button type="submit">Login</button>
-            <button type="submit">Register</button>
         </div>
     </form>
 

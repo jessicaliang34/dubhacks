@@ -3,6 +3,7 @@
 *.manifest
 *.cache
 *.vs
-bin
-obj
-config
+/bin
+/obj
+/config
+WebApplication1/bin/Debug/

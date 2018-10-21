@@ -1,5 +1,8 @@
-.vs
+*.exe
+*.pdb
+*.manifest
 *.cache
-WebApplication1\obj\
-WebApplication1\bin\
-*.cache
+*.vs
+bin
+obj
+config

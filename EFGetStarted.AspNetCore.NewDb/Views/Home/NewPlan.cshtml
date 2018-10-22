@@ -1,0 +1,158 @@
+﻿@*<!DOCTYPE html>
+	@model EFGetStarted.AspNetCore.NewDb.Models.NewPlanModel
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				font-family: Calibri;
+				font-size: 20px;
+			}
+
+			form {
+				border: 3px solid #f1f1f1;
+			}
+
+			h2 {
+				margin-top: 50px;
+			}
+
+			input[type=text], input[type=password] {
+				width: 70%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
+			}
+
+			button {
+				background-color: #4CAF50;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 15px;
+				cursor: pointer;
+				width: 15%;
+			}
+
+				button:hover {
+					opacity: 0.8;
+				}
+
+			.search {
+				width: 10%;
+			}
+
+			.cancelbtn {
+				width: auto;
+				padding: 10px 18px;
+				background-color: #f44336;
+			}
+
+			.imgcontainer {
+				text-align: center;
+				margin: 24px 0 12px 0;
+			}
+
+			img.avatar {
+				width: 40%;
+				border-radius: 50%;
+			}
+
+			.container {
+				padding: 16px;
+			}
+
+			span.psw {
+				float: right;
+				padding-top: 16px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h2>Create a Plan!</h2>
+
+		<form action="/action_page.php">
+			<div class="container">
+
+				<div class="editor-label">
+					@Html.LabelFor(model => model.AllUsernames, "All Usernames")
+				</div>
+
+				<div class="editor-label">
+					@Html.LabelFor(model => model.PlanName, "Plan Name")
+				</div>
+
+				<div id="invites">
+					<label class="search" for="uname"><b>Invite: </b></label>
+					<input type="text" placeholder="Enter Username">
+					<button type="submit" onclick="addInvite(); return false;">Invite friend!</button>
+				</div>
+				<script type="text/javascript">
+					function addInvite() {
+						var write = document.getElementById('invites');
+						var child = document.createElement('div');
+						child.innerHTML = "<br/> <b>Invite: </b><input type=\"text\" placeholder=\"Enter Username\">"
+						write.appendChild(child);
+					}
+				</script>
+				<div>
+					<label class="search" for="pname"><b>Plan Name: </b></label>
+					<input type="text" placeholder="Plan Name">
+					<button type="submit">Add Plan</button>
+				</div>
+
+
+			</div>
+		</form>
+
+
+	</body>
+	</html>*@
+
+@model NewPlanModel
+
+@{
+	ViewData["Title"] = "Create a new plan with your friends!";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="PlansForm" asp-action="NewPlan" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+
+	<h4>User details.</h4>
+	<div style="border-top: 1px solid #E8E8E8"><br /></div>
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<div class="form-group">
+		<label asp-for="AllUsernames" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="AllUsernames" class="form-control"  />
+			<span asp-validation-for="AllUsernames" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="PlanName" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="PlanName" class="form-control" />
+			<span asp-validation-for="PlanName" class="text-danger"></span>
+		</div>
+	</div>
+
+
+
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<button type="submit" class="btn btn-default">Create</button>
+		</div>
+	</div>
+
+</form>
+
+
+@section Scripts {
+	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -11,6 +11,11 @@ namespace EFGetStarted.AspNetCore.NewDb.Models
     {
 		public string AllUsernames { get; set; }
 		public string PlanName { get; set; }
-		public List<OptimalPlan> UserPlans { get; set; }
+		public DateTime DateSet { get; set; }
+		public DateTime StartTime { get; set;  }
+		public DateTime EndTime { get; set; }
+		public string City { get; set; }
+		public string Price { get; set; }
+		public List<ViewAllPlansModel> UserPlans { get; set; }
 	}
 }

@@ -1,71 +1,85 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
+﻿using EFGetStarted.AspNetCore.NewDb.ClassesWeNeed;
+using EFGetStarted.AspNetCore.NewDb.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-//namespace EFGetStarted.AspNetCore.NewDb.Controllers
-//{
-//	public class PlansFormsController : Controller
-//	{
-//		[HttpGet]
-//		public ActionResult NewPlan()
-//		{
-//			return View();
-//		}
+namespace EFGetStarted.AspNetCore.NewDb.Controllers
+{
+	public class PlansFormsController : Controller
+	{
+		private readonly BloggingContext _context;
 
-//		[HttpPost]
-//		public ActionResult NewPlan(NewPlanModel model)
-//		{
-//			var allNames = model.AllUsernames;
-//			var listOfAllNames = allNames.Split(',');
-//			var planName = model.PlanName;
-//			foreach (var name in listOfAllNames)
-//			{
-//				createNewPlan(planName, name);
-//			}
+		public PlansFormsController(BloggingContext context)
+		{
+			_context = context;
+		}
 
-//			return View(ViewAllPlans);
-//		}
+		[HttpGet]
+		public IActionResult NewPlan()
+		{
+			return View();
+		}
 
-//		[HttpGet]
-//		public ActionResult UpdatePlan()
-//		{
-//			var model = new UpdatePlanModel();
-//			model.PlanId = //parseplanId
-//			model.Username = //parsename
+		[HttpPost]
+		public IActionResult NewPlan(NewPlanModel model)
+		{   
+			var allNames = model.AllUsernames;
+			string[] listOfAllNames = allNames.Split(',');
+			var planName = model.PlanName;
+			foreach (var name in listOfAllNames)
+			{
+				var newPlan = new UserPlans
+				{
+					Id = name,
+					PlanName = planName
+				};
+				_context.UserPlans.Add(newPlan);
+				_context.SaveChanges();
+			}
+			return View(model);
+		}
 
-//				return View(model);
-//		}
+		[HttpGet]
+		public IActionResult UpdatePlan()
+		{
+			//var model = new UpdatePlanModel();
+			//model.PlanId = //parseplanId
+			//model.Username = //parsename
 
-//		[HttpPost]
-//		public ActionResult UpdatePlan(UpdatePlanModel model)
-//		{
-//			var plan = getPlan(model.planId, model.username);
-//			var allDates = model.Date;
-//			allDates.ForEach(x => x.ToString());
-//			var allDatesString = String.Join(",", allDates);
-//			plan.date = allDatesString;
+				return View();
+		}
 
-//			plan.startDate = model.StartDate;
-//			plan.endDate = model.EndDate;
-//			plan.city = model.CityName;
-//			plan.price = model.Price;
+		//[HttpPost]
+		//public ActionResult UpdatePlan(UpdatePlanModel model)
+		//{
+		//	var plan = getPlan(model.planId, model.username);
+		//	var allDates = model.Date;
+		//	allDates.ForEach(x => x.ToString());
+		//	var allDatesString = String.Join(",", allDates);
+		//	plan.date = allDatesString;
 
-//			var allCusines = model.Cuisine;
-//			//set cusines only true ones
+		//	plan.startDate = model.StartDate;
+		//	plan.endDate = model.EndDate;
+		//	plan.city = model.CityName;
+		//	plan.price = model.Price;
 
-//			return View(ViewAllUsers);
-//		}
+		//	var allCusines = model.Cuisine;
+		//	set cusines only true ones
 
-//		[HttpGet]
-//		public ActionResult ViewAllPlans()
-//		{
-//			var user = getallplans;//somehow extract user
-//			var model = new ViewAllPlansModel();
-//			model.UserPlans = getAllUserPlans(user);
+		//	return View(ViewAllUsers);
+		//}
 
-//			return View(model);
-//		}
-//	}
-//}
+		[HttpGet]
+		public IActionResult ViewAllPlans()
+		{
+			//var user = getallplans;//somehow extract user
+			//var model = new ViewAllPlansModel();
+			//model.UserPlans = getAllUserPlans(user);
+
+			return View();
+		}
+	}
+}

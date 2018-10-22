@@ -1,108 +1,81 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Calibri;
-            font-size: 20px;
-        }
+﻿@model UpdatePlanModel
+@{
+	ViewData["Title"] = "Update your plan";
+}
 
-        form {
-            border: 3px solid #f1f1f1;
-        }
+<h2>@ViewData["Title"]</h2>
 
-        h2 {
-            margin-top: 50px;
-        }
+<form asp-controller="Manage" asp-action="RegisterUser" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+	<h4>Input your preferences.</h4>
+	<hr />
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<div class="form-group">
+		<label asp-for="planId" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="planId" class="form-control" />
+			<span asp-validation-for="planId" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label asp-for="username" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="username" class="form-control" />
+			<span asp-validation-for="username" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label asp-for="StartDate" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="StartDate" class="form-control" />
+			<span asp-validation-for="StartDate" class="text-danger"></span>
+		</div>
 
-        input[type=text], input[type=password] {
-            width: 70%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
+	</div>
 
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            width: 15%;
-        }
+	<div class="form-group">
+		<label asp-for="EndDate" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="EndDate" class="form-control" />
+			<span asp-validation-for="EndDate" class="text-danger"></span>
+		</div>
+	</div>
 
-            button:hover {
-                opacity: 0.8;
-            }
+	<div class="form-group">
+		<label asp-for="CityName" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="CityName" class="form-control" />
+			<span asp-validation-for="CityName" class="text-danger"></span>
+		</div>
+	</div>
 
-        .search {
-            width: 10%;
-        }
+	<div class="form-group">
+		<label asp-for="Price" class="col-md-2 control-label"></label>
+		<div class="col-md-10">
+			<input asp-for="Price" class="form-control" />
+			<span asp-validation-for="Price" class="text-danger"></span>
+		</div>
+	</div>
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
+	@*<div class="form-group">
+		<div>
+			@for (int i = 0; i < ViewBag.Roles.Count; i++)
+			{
+				<div>
+					@Html.CheckBoxFor(m => m.Roles[i])
+					@ViewBag.Roles[i].Name
+				</div>
 
-        .imgcontainer {
-            text-align: center;
-            margin: 24px 0 12px 0;
-        }
+			}
+		</div>
+	</div>*@
 
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<button type="submit" class="btn btn-default">Update your plan</button>
+		</div>
+	</div>
+</form>
 
-        .container {
-            padding: 16px;
-        }
-
-        span.psw {
-            float: right;
-            padding-top: 16px;
-        }
-    </style>
-</head>
-<body>
-
-    <h2>Create a Plan!</h2>
-
-    <form action="/action_page.php">
-        <div class="container">
-			<div id="invites">
-				<label class="search" for="uname"><b>Update Something: </b></label>
-				<input type="text" placeholder="Enter Username">
-				Merge commit '77e79b4'
-			</div>
-            <div>
-                <label class="search" for="pname"><b>Update Something: </b></label>
-                <input type="text" placeholder="Plan Name">
-            </div>
-            <div>
-                <label class="search" for="pname"><b>Update Something: </b></label>
-                <input type="text" placeholder="Plan Name">
-            </div>
-            <div>
-                <label class="search" for="pname"><b>Update Something: </b></label>
-                <input type="text" placeholder="Plan Name">
-            </div>
-            <div>
-                <label class="search" for="pname"><b>Update Something: </b></label>
-                <input type="text" placeholder="Plan Name">
-            </div>
-            <div>
-                <label class="search" for="pname"><b>Update Something: </b></label>
-                <input type="text" placeholder="Plan Name">
-            </div>
-            <button type="submit" onclick="">Update</button>
-
-
-        </div>
-    </form>
-
-
-</body>
-</html>
+@section Scripts {
+	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

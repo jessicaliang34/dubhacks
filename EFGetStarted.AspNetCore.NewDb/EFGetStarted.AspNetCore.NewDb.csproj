@@ -25,16 +25,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-	  <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
 
-<<<<<<< HEAD
-
-=======
   <ItemGroup>
     <Folder Include="Views\PlansForm\" />
   </ItemGroup>
->>>>>>> 77e79b4
 
 </Project>

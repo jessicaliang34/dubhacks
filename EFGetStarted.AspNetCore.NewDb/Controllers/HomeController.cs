@@ -32,19 +32,29 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
 		public IActionResult NewPlan(NewPlanModel model)
 		{
 			var allNames = model.AllUsernames;
-			string[] listOfAllNames = allNames.Split(',');
+			//string[] listOfAllNames = allNames.Split(',');
 			var planName = model.PlanName;
-			foreach (var name in listOfAllNames)
+			var newPlan = new UserPlans
 			{
-				var newPlan = new UserPlans
-				{
-					Id = name,
-					PlanName = planName
-				};
-				_context.UserPlans.Add(newPlan);
-				_context.SaveChanges();
-			}
+				Id = allNames,
+				price = allNames,
+				PlanName = planName
+			};
+			_context.UserPlans.Add(newPlan);
+			_context.SaveChanges();
 			return View(model);
+
+			//foreach (var name in listOfAllNames)
+			//{
+			//	var newPlan = new UserPlans
+			//	{
+			//		Id = name,
+			//		PlanName = planName
+			//	};
+			//	_context.UserPlans.Add(newPlan);
+			//	_context.SaveChanges();
+			//}
+			//return View(model);
 		}
 
 		[HttpGet]

@@ -13,6 +13,6 @@ namespace EFGetStarted.AspNetCore.NewDb.Models
 		public string Username { get; set; }
 		[Required]
 		[Display(Name = "Password")]
-		public string Login { get; set; }
+		public string Password { get; set; }
 	}
 }

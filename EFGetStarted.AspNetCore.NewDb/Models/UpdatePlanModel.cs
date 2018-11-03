@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EFGetStarted.AspNetCore.NewDb.Models
 {
-    public class UpdatePlanModel
-    {
+	public class UpdatePlanModel
+	{
 		[Display(Name = "Plan Name")]
 		public string planId { get; set; }
 

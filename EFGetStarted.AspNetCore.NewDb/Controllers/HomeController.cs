@@ -12,6 +12,7 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
     public class HomeController : Controller
     {
 		private readonly BloggingContext _context;
+		List<string> cuisines = new List<string>() { "Korean", "Thai", "Taiwanese", "Japanese", "American", "Italian" };
 
 		public HomeController(BloggingContext context)
 		{
@@ -63,8 +64,9 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
 			//var model = new UpdatePlanModel();
 			//model.PlanId = //parseplanId
 			//model.Username = //parsename
-
+			ViewBag.Cuisines = cuisines;
 			return View();
+			
 		}
 
 		//[HttpPost]

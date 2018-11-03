@@ -39,7 +39,6 @@
 //			var price = findOptimalPrice(planId);
 //			var city = findOptimalCity(planId);
 
-
 //			var goodPlan = new OptimalPlan
 //			{
 //				Cuisine = cuisine,

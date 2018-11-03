@@ -32,19 +32,19 @@
 			<div class="form-group">
 				<input asp-for="Price" class="form-control" />
 			</div>
+			<legend><span class="number">7</span>Cuisine</legend>
+			<div class="form-group">
+				<div>
+					@for (int i = 0; i < ViewBag.Cuisines.Count; i++)
+			{
+				<div>
+					@Html.CheckBoxFor(m => m.Cuisine[i])
+					@ViewBag.Cuisines[i]
+		</div>
 
-			@*<div class="form-group">
-					<div>
-						@for (int i = 0; i < ViewBag.Roles.Count; i++)
-						{
-							<div>
-								@Html.CheckBoxFor(m => m.Roles[i])
-								@ViewBag.Roles[i].Name
-							</div>
-
-						}
-					</div>
-				</div>*@
+}
+				</div>
+			</div>
 		</fieldset>
 		<input type="submit" value="Update Plan" />
 	</form>
@@ -60,12 +60,12 @@
 		padding: 20px;
 		background: #f4f7f8;
 		border-radius: 8px;
-		font-family: Impact, Charcoal, sans-serif
+		font-family: FreeMono, monospace
 	}
 
 	.h2 {
 		color: ##1abc9c;
-		font-family: Impact, Charcoal, sans-serif
+		font-family: FreeMono, monospace
 	}
 
 	.form-style-5 fieldset {

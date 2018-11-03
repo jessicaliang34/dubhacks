@@ -32,6 +32,28 @@
 	</div>
 
 
+	@*<form action="/action_page.php">
+		<div class="container">
+			<div id="invites">
+				<label for="uname"><b>Invite: </b></label>
+				<input type="text" placeholder="Enter Username">
+			</div>
+			<script type="text/javascript">
+            function addInvite() {
+                var write = document.getElementById('invites');
+                var child = document.createElement('div');
+                child.innerHTML = "<br/> <b>Invite: </b><input type=\"text\" placeholder=\"Enter Username\">"
+                write.appendChild(child);
+            }
+			</script>
+			<button type="submit" onclick="addInvite(); return false;">Add another friend!</button>
+			<div>
+				<label for="pname"><b>Plan Name: </b></label>
+				<input type="text" placeholder="Plan Name">
+			</div>
+			<button type="submit">Login</button>
+		</div>
+	</form>*@
 
 	<style type="text/css">
 		.form-style-5 {
@@ -42,12 +64,12 @@
 			padding: 20px;
 			background: #f4f7f8;
 			border-radius: 8px;
-			font-family: Impact, Charcoal, sans-serif
+			font-family: FreeMono, monospace
 		}
 
 		.h2 {
 			color: ##1abc9c;
-			font-family: Impact, Charcoal, sans-serif
+			font-family: FreeMono, monospace
 		}
 
 		.form-style-5 fieldset {

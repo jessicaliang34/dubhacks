@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetNEat", "MeetNEat\MeetNEat.csproj", "{A8830850-31C0-49A2-87C1-FBC4C4B791CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8830850-31C0-49A2-87C1-FBC4C4B791CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8830850-31C0-49A2-87C1-FBC4C4B791CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8830850-31C0-49A2-87C1-FBC4C4B791CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8830850-31C0-49A2-87C1-FBC4C4B791CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B226194-6D4F-45E0-9D7B-2D6AD64FE7AC}
+	EndGlobalSection
+EndGlobal

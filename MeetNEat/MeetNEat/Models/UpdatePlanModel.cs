@@ -9,7 +9,7 @@ namespace MeetNEat.Models
     public class UpdatePlanModel
     {
 		[Display(Name = "Plan Name")]
-		public string planId { get; set; }
+		public string planName { get; set; }
 
 		[Display(Name = "Username")]
 		public string username { get; set; }
@@ -18,14 +18,14 @@ namespace MeetNEat.Models
 		public List<DateTime?> Date { get; set; }
 
 		[Display(Name = "Start Time")]
-		public DateTime? StartDate { get; set; }
+		public DateTime? StartTime { get; set; }
 
 		[Display(Name = "End Time")]
-		public DateTime? EndDate { get; set; }
+		public DateTime? EndTime { get; set; }
 		public List<bool> Cuisine { get; set; }
 
 		[Display(Name = "City Preferred")]
-		public string CityName { get; set; }
+		public string City { get; set; }
 
 		[Display(Name = "Price Preferance")]
 		public string Price { get; set; }
